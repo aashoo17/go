@@ -11,7 +11,7 @@ func goroutinePrint() {
 	fmt.Println("Hello World")
 }
 
-func main() {
+func Goroutine() {
 	//call the function using go like below
 	//this will create a goroutine
 	go goroutinePrint()

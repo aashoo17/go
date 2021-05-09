@@ -13,7 +13,7 @@ import "fmt"
 
 //TODO: this example can be improved - try to do so later
 
-func main() {
+func Buffered_channel() {
 	//buffered channel of size 10
 	ch := make(chan int, 10)
 	go randomDataEmitter(ch)

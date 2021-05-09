@@ -1,16 +1,11 @@
 package main
 
-func main() {
-
-}
-
-//a basic function taking 1 arg and returning 1 value
+//fuction with 1 arg and 1 return
 func basicFunc(x int) int {
 	return 10
 }
 
-//returning more than 1 value
-
+//multiple returns
 func multipleReturn() (int, int) {
 	return 10, 10
 }

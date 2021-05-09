@@ -23,7 +23,7 @@ import (
 	"time"
 )
 
-func main() {
+func Mutex_working() {
 	//create map
 	m := map[int]int{1: 10}
 	//TODO: initialization of mutext is as easy as calling Mutex{}, we did not require its fields updation how

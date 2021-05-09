@@ -1,4 +1,4 @@
-package main
+package io
 
 import (
 	"bufio"
@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func main() {
+func BufIO() {
 	f, _ := os.Create("file.txt")
 	//for buffering just create wrapper over File (in general over io.Reader/io.Writer)
 	bf := bufio.NewWriter(os.Stdout)

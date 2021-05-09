@@ -1,4 +1,4 @@
-package main
+package pkg
 
 /*
 all the crypto functions are having same interface
@@ -21,7 +21,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func Hashing() {
 
 }
 

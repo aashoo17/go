@@ -10,12 +10,8 @@ auto deref of pointerwith .
 nil pointer
 pointer indirection when using methods
 */
-func main() {
-	myPtr()
-	structPointer()
-}
 
-//create, initialuze, deref ptr
+//create, initialize, deref ptr
 func myPtr() {
 	var a int = 10
 	//create & initialize ptr

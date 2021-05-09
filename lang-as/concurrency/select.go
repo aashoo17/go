@@ -33,7 +33,7 @@ package main
 
 import "fmt"
 
-func main() {
+func Select_uses() {
 	//create 3 channels
 	var ch, ch1, ch2 chan int
 	//initialize the channel

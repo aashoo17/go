@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func map_working() {
 	//create map
 	a := map[int]int{1: 10, 2: 20}
 

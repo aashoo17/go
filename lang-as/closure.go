@@ -10,7 +10,7 @@ import "fmt"
 //but when closure references that variable garbage collector will not free it
 //and keep it around for closure to be used
 
-func main() {
+func closure() {
 	var a = 10
 	var b = func() {
 		//this closure has no variable a it is taking a variable from main function

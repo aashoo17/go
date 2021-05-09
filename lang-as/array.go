@@ -7,7 +7,7 @@ array:
 create, read/modify using index
 */
 
-func main() {
+func array() {
 	//create
 	var a [10]int
 	var b = [10]int{10, 20, 30, 40}

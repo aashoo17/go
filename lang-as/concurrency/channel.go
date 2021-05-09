@@ -8,7 +8,7 @@ package main
 
 import "fmt"
 
-func main() {
+func Channel() {
 	//creating channel
 	//can't use var ch chan int as the channel will be nil
 	ch := make(chan int)
