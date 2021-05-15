@@ -86,6 +86,7 @@ func ZeroValues() {
 /*
 all type conversions in go are explicit
 it is error to pass one type another type without explicit conversion
+assignemnt and in function arguments
 */
 func TypeConversion() {
 	var a int = 10

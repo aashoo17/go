@@ -8,11 +8,11 @@ import (
 //udp client
 func UdpClient() {
 	cl, _ := net.Dial("udp", "127.0.0.1:3000")
-	buf := [100]uint8{}
+	buf := make([]uint8,100)
 	for{
 		cl.Write([]byte("Hello from UDP client\n"))
-		cl.Read(buf[:])
-		fmt.Println(buf)
+		cl.Read(buf)
+		fmt.Println(string(buf))
 	}
 }
 
@@ -20,10 +20,17 @@ func UdpClient() {
 func UdpServer(){
 	addr,_ := net.ResolveUDPAddr("udp","127.0.0.1:3000")
 	server, _ := net.ListenUDP("udp", addr)
-	buf := [100]uint8{}
+	buf := make([]uint8,100)
+	//FIXME: fix the server a large goroutine is being spawned over loop and program is crashing
 	for{
-		server.Write([]byte("Hello from TCP client\n"))
-		server.Read(buf[:])
-		fmt.Println(buf)
+		go handleUdpConn(server,buf)
+	}
+}
+
+func handleUdpConn(cl net.Conn, buf []uint8) {
+	for {
+		cl.Read(buf)
+		cl.Write([]byte("Hello from UDP client\n"))
+		fmt.Println(string(buf))
 	}
 }

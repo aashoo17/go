@@ -1,9 +1,7 @@
 package main
 
-import (
-	mynet "github.com/lang-as/networking"
-)
+import "github.com/lang-as/networking"
 
 func main() {
-	mynet.UdpServer()
+	networking.UdpServer()
 }

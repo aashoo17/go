@@ -16,7 +16,7 @@ func myPtr() {
 	var a int = 10
 	//create & initialize ptr
 	var b *int = &a
-	//deref
+	//deref - modify pointer underlying value
 	*b = 20
 
 	//create and then initialize
@@ -26,7 +26,7 @@ func myPtr() {
 	//deref
 	*c = 50
 
-	//nil pointer
+	//nil pointer - pointer doesn't point to anywhere valid in cpu
 	var d *int = nil
 
 	fmt.Println(b, c, d)
