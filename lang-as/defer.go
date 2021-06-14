@@ -22,7 +22,6 @@ func DeferCall() {
 	defer fmt.Print("I should be last line in the function to be called written in advance")
 }
 
-
 /*
 stacking of defers:
 when multiple defers are called they get stack and called lifo (last in first out) order

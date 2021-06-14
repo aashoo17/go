@@ -39,13 +39,13 @@ func Loop() {
 	//for as iterator loop
 	a := []int{10, 20, 30, 40, 50}
 	for k, v := range a {
-		fmt.Println(k,v)
+		fmt.Println(k, v)
 	}
 }
 
 // infinite for loop
-func InfiniteLoop(){
-	for{
+func InfiniteLoop() {
+	for {
 
 	}
 }

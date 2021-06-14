@@ -2,7 +2,8 @@ package main
 
 import "fmt"
 
-func map_working() {
+//TODO: go map are based on hash map or btree map ?
+func map_() {
 	//create map
 	a := map[int]int{1: 10, 2: 20}
 

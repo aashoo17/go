@@ -3,10 +3,9 @@ package main
 import "fmt"
 
 func conditional() {
-
 	//if, else, else if
 	var a = true
-
+	//TODO: can we use truthy and falsy concept in go
 	if a {
 		fmt.Println("if branch")
 	} else {
@@ -16,16 +15,15 @@ func conditional() {
 	var b = 10
 
 	if b == 2 {
-		//do this
+		fmt.Println("got 2")
 	} else if b == 4 {
-		//do this
+		fmt.Println("got 4")
 	} else {
-		//do this
+		fmt.Println("got other than 2 or 4")
 	}
-
 	// if with a short statement
 	if a = false; a == true {
-		//do this
+		fmt.Println("a is true then")
 	}
 
 	//switch
@@ -42,6 +40,7 @@ func conditional() {
 	}
 
 	//switch with no condition works as - switch true
+	//break are implicit unlike in c
 	d := 10
 	switch {
 	case d == 0:

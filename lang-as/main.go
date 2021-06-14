@@ -1,7 +1,8 @@
 package main
 
-import "github.com/lang-as/networking"
+import "fmt"
 
 func main() {
-	networking.UdpServer()
+
+	initialize_struct()
 }
