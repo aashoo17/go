@@ -15,7 +15,7 @@ really cool api - for high level language
 //calendar time
 func CalendarTime() {
 	a := time.Now()
-	fmt.Println(a)
+	fmt.Println(a) //TODO: why this is printing custom string rather than no of seconds
 
 	//getting time, day, year etc
 	b1, b2, b3 := a.Date()
@@ -27,12 +27,11 @@ func CalendarTime() {
 	fmt.Println(d1, d2, d3)
 }
 
-// cpu time
+// elapsed time
 func CpuTime() {
 	a := time.Now()
-	fmt.Println("Hello CPU time")
+	fmt.Println("Hello elapsed time")
 	b := time.Now()
-
 	c := b.Sub(a)
 	fmt.Println(c)
 }
@@ -48,13 +47,12 @@ func Alarm() {
 
 //continuous alarm - called as Ticker in go
 func ContinuousAlarm() {
-	//create a timer which will give time after 1s duration
+	//create a ticker which will give time after every 1s duration
 	b := time.NewTicker(time.Second)
 
 	for c := range b.C {
 		fmt.Println(c)
 	}
-
 }
 
 //Sleep for some time

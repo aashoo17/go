@@ -12,7 +12,7 @@ func map_() {
 	a[3] = 40
 	fmt.Println(a)
 
-	//delet a value
+	//delete a value
 	delete(a, 3)
 	fmt.Println(a)
 }
