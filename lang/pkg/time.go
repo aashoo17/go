@@ -15,7 +15,7 @@ really cool api - for high level language
 //calendar time
 func CalendarTime() {
 	a := time.Now()
-	fmt.Println(a) //TODO: why this is printing custom string rather than no of seconds
+	fmt.Println(a) //TODO: why this is printing custom string rather than no of seconds - why go has chosen this
 
 	//getting time, day, year etc
 	b1, b2, b3 := a.Date()
@@ -28,7 +28,7 @@ func CalendarTime() {
 }
 
 // elapsed time
-func CpuTime() {
+func ElapsedTime() {
 	a := time.Now()
 	fmt.Println("Hello elapsed time")
 	b := time.Now()
@@ -47,6 +47,7 @@ func Alarm() {
 
 //continuous alarm - called as Ticker in go
 func ContinuousAlarm() {
+	//TODO: ADD CTRL + C signal handling to stop the time from command line
 	//create a ticker which will give time after every 1s duration
 	b := time.NewTicker(time.Second)
 
