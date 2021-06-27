@@ -16,7 +16,7 @@ case <-ch:
 	//do some
 case <-ch1:
 	//do some
-case <-ch3:
+case <-ch2:
 	//do some
 default:
 	//run if no case channel is ready

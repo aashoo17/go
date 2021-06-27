@@ -1,7 +1,9 @@
 package main
 
-import "github.com/lang/pkg"
+import (
+	"github.com/lang/pkg"
+)
 
 func main() {
-	pkg.ContinuousAlarm()
+	pkg.Signal()
 }

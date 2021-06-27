@@ -1,5 +1,5 @@
 //channel is a way to communicate between goroutines
-//passing data around
+//passing data around - without fear the data will be modified by more than 1 goroutine together
 //even blocking a goroutine if it is waiting for data over channel until data is received
 //this is one way to synchronise goroutines
 

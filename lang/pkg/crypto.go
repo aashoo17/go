@@ -83,10 +83,10 @@ func createShaHash() {
 
 //random no generator
 //they will be used in some of crypto functions
-func randomNoGenerator() {
+func RandomNoGenerator() {
 	//reader from where we can read random nos - this is an interface which usually gets random no by calling
 	//implementaions in linux, windows..and other os
-	reader := rand.Reader
+	reader := rand.Reader //rand.Reader => var Reader io.Reader
 
 	//make a slice of []byte in which we will store the generated random no
 	sl := make([]byte, 10)
