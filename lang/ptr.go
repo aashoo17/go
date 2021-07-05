@@ -12,7 +12,7 @@ pointer indirection when using methods
 */
 
 //create, initialize, deref ptr
-func myPtr() {
+func Ptr() {
 	var a int = 10
 	//create & initialize ptr
 	var b *int = &a
@@ -39,7 +39,7 @@ type Human struct {
 }
 
 //pointer to struct
-func structPointer() {
+func StructPointer() {
 	a := Human{
 		name: "Something",
 		age:  10,

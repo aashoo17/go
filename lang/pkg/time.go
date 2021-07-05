@@ -7,8 +7,8 @@ import (
 
 /*
 so Time struct keeps track of both absolute time and monotonic time in this struct - time.Time
-some operations will use absolute time from epoch
-some will use monotonic time for elapsed time
+some methods will use absolute time from epoch - calendar time
+some will use monotonic time - for elapsed time
 really cool api - for high level language
 */
 
@@ -32,7 +32,7 @@ func ElapsedTime() {
 	a := time.Now()
 	fmt.Println("Hello elapsed time")
 	b := time.Now()
-	c := b.Sub(a)
+	c := b.Sub(a) //this uses monotonic time for substraction
 	fmt.Println(c)
 }
 

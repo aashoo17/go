@@ -15,7 +15,7 @@ func CreateProcess() {
 	}
 }
 
-func ProcessWait() {
+func WaitChildProcess() {
 	a := exec.Command("sleep", "3")
 	a.Stdout = os.Stdout //assign the stdout to the new process by default it is nil
 	b := a.Start()       //Start() does not wait for child process and child process sleeps for 3 seconds but parent process will exit

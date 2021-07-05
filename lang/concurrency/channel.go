@@ -4,7 +4,7 @@
 //this is one way to synchronise goroutines
 
 //1. use channel to block main goroutine so that some goroutine is executed without calling time.Sleep()
-package main
+package concurrency
 
 import "fmt"
 

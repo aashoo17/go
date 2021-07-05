@@ -8,7 +8,7 @@ type MyStruct struct {
 	age  int
 }
 
-func initialize_struct() {
+func InitializeStruct() {
 	//struct initialization using struct literal
 	var a MyStruct = MyStruct{
 		name: "MyStruct",
@@ -24,7 +24,7 @@ func initialize_struct() {
 // methods on structs
 
 //pass struct by value
-func (a MyStruct) passbyValue() {
+func (a MyStruct)PassbyValue() {
 	//read struct value
 	var b = a.name
 	var c = a.age
@@ -33,7 +33,7 @@ func (a MyStruct) passbyValue() {
 }
 
 //pass struct using pointer - called pointer receiver in go
-func (a *MyStruct) passbyPointer() {
+func (a *MyStruct) PassbyPointer() {
 	//modify struct using pointer
 	a.name = "Some Name"
 	a.age = 10

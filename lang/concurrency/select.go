@@ -29,7 +29,7 @@ TODO: will code not move past select block until 1 case is run (if default is no
 
 */
 
-package main
+package concurrency
 
 import "fmt"
 

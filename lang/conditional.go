@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func conditional() {
+func Conditional() {
 	//if, else, else if
 	var a = true
 	//TODO: can we use truthy and falsy concept in go

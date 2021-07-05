@@ -15,7 +15,7 @@ keep that piece of code between Lock() and Unlock()
 
 */
 
-package main
+package concurrency
 
 import (
 	"fmt"

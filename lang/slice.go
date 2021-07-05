@@ -9,7 +9,7 @@ create from make()
 modify slice - using append()
 */
 
-func slice_working() {
+func SlicWorking() {
 	var a = [5]int{10, 20, 30, 40}
 
 	//creating slice from array
