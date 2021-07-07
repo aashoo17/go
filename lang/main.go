@@ -1,7 +1,7 @@
 package main
 
-import "github.com/lang/concurrency"
+import "github.com/lang/pkg"
 
 func main() {
-	concurrency.WaitForGoroutines()
+	pkg.Ed25519Func()
 }
