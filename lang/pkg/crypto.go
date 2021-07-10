@@ -4,11 +4,10 @@ package pkg
 all the crypto functions are having same interface
 
 New() => this will create a hash.Hash interface
-Sum() => this will generate actual hashed value, so only calling Sum() is sufficient to generate hash
+Sum() => this will generate actual hashed value
 
 TODO: so what is the use of New() ??
 is New() is used as more or less like salting the hash
-
 */
 
 import (
@@ -141,12 +140,20 @@ func Ed25519Func2() {
 	//change slice with random no
 	rand.Read(seed)
 	privateKey := ed25519.NewKeyFromSeed(seed)
-
+	fmt.Println(privateKey)
 	//once private key is receive we can get public key or seed used to create the private key
 	//get public key
 	//todo: here we are getting crypto.PublicKey, how to get ed25519.PrivateKey ??
-	publicKey := privateKey.Public()
-	fmt.Println(publicKey)
+	//todo: can we get public key frm private key like in rsa to be used in Verify() call
+	// publicKey := privateKey.PublicKey
 
 	//now private and public key received call Sign() and Verify() as done above in ed25519Func
+	//sign some message using private key
+	// message := []byte("Hello World")
+	//todo: usually we will hash the message but for this simple example it is ok
+	// signedBytes := ed25519.Sign(privateKey, message)
+
+	//verify signed bytes using public key - true if signed with corresponding private key
+	// result := ed25519.Verify(publicKey, message, signedBytes)
+	// fmt.Println(result) //should be true here
 }

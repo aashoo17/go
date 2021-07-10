@@ -10,7 +10,7 @@ create, read/modify using index
 func Array() {
 	//create
 	var a [10]int
-	var b = [10]int{10, 20, 30, 40}
+	var b [10]int = [10]int{10, 20, 30, 40}
 	c := [10]int{10, 20, 30}
 
 	//read

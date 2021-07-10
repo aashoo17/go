@@ -32,6 +32,7 @@ func Ptr() {
 	fmt.Println(b, c, d)
 }
 
+//todo: is it possible or not
 //Human struct and passing them as pointer in methods
 type Human struct {
 	name string `default0:"default string"`

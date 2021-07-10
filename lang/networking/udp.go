@@ -21,7 +21,7 @@ func UdpServer() {
 	addr, _ := net.ResolveUDPAddr("udp", "127.0.0.1:3000")
 	server, _ := net.ListenUDP("udp", addr)
 	buf := make([]uint8, 100)
-	//FIXME: fix the server a large goroutine is being spawned over loop and program is crashing
+	//fixme: fix the server a large goroutine is being spawned over loop and program is crashing
 	for {
 		go handleUdpConn(server, buf)
 	}

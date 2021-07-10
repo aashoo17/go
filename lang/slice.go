@@ -9,14 +9,14 @@ create from make()
 modify slice - using append()
 */
 
-func SlicWorking() {
-	var a = [5]int{10, 20, 30, 40}
+func SliceWorking() {
+	var a [5]int = [5]int{10, 20, 30, 40}
 
 	//creating slice from array
 	//getting slice which will point to memory inside array a
 	var b []int = a[:]
-	var _ = a[1:3]
-
+	var b1 []int = a[1:3]
+	fmt.Println(b1)
 	//creating slice from make()
 	var c = make([]int, 10)
 	fmt.Println(c)

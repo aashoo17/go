@@ -19,7 +19,7 @@ func TcpServer() {
 	server, _ := net.Listen("tcp", "127.0.0.1:3000")
 	buf := make([]uint8, 100)
 	for {
-		cl, _ := server.Accept()
+		cl, _ := server.Accept() //todo: is Accept() blocking
 		//handle each connection in their own goroutine
 		go handleConn(cl, buf)
 	}

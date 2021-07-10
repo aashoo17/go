@@ -5,10 +5,6 @@ import (
 	"os"
 )
 
-// func main() {
-// 	OpenFile()
-// }
-
 //write to a file
 
 func WriteToFile() {

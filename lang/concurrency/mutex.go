@@ -7,7 +7,7 @@ Lock()
 some code here
 ..some more code
 Unlock()
-coe between Lock() and Unlock() can be accessed by only one goorotine at once (goroutine which has taken lock only that one)
+coe between Lock() and Unlock() can be accessed by only one gooroutine at once (goroutine which has taken lock only that one)
 once Unlock() is called now others can have access
 
 so idea is that if a piece of code modified from different goroutine can create data/race or race condition
@@ -29,8 +29,6 @@ func Mutex_working() {
 	//TODO: initialization of mutext is as easy as calling Mutex{}, we did not require its fields updation how
 	//is it possible if we don't have constructor concept in go
 	mux := sync.Mutex{}
-	//TODO: what will happen if we have not taken pointer type of map and mutex
-	//is everything in go is copy type when passed in function
 	go criticalPieceOfCode(&m, &mux)
 	go criticalPieceOfCode(&m, &mux)
 
@@ -39,7 +37,7 @@ func Mutex_working() {
 	fmt.Println(m)
 }
 
-//this is the code whose some part should not be accessed by more than 1 gorutine
+//this is the code whose some part should not be accessed by more than 1 goroutine
 func criticalPieceOfCode(m *map[int]int, mux *sync.Mutex) {
 	//do somethong non critical here - may be print
 	fmt.Println("non critical code")
@@ -48,7 +46,7 @@ func criticalPieceOfCode(m *map[int]int, mux *sync.Mutex) {
 	//only alllow 1 goroutine at a time
 	//take a lock over mutex
 	mux.Lock()
-	//defer the unlock() which means this will be called when func criticalPieceOfCode() returns
+	//defer the unlock() which means this will be called just before func criticalPieceOfCode() returns
 	defer mux.Unlock()
 	//update some indexes
 	//TODO: try to get the current size of map and then update next 2 indices of map - so that updation from more than 1 goroutine

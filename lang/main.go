@@ -1,7 +1,9 @@
 package main
 
-import "github.com/lang/pkg"
+import (
+	"github.com/lang/concurrency"
+)
 
 func main() {
-	pkg.Ed25519Func()
+	concurrency.Select_uses()
 }

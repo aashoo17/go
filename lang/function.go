@@ -1,6 +1,6 @@
 package main
 
-//fuction with 1 arg and 1 return
+//function with 1 arg and 1 return
 func basicFunc(x int) int {
 	return 10
 }

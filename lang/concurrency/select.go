@@ -8,7 +8,7 @@ so select is kinda same with a small difference
 select can block goroutine waiting for data over channel just like normal channel
 but select can wait on multiple channels
 
-//TODO: I suspect there can be more in select instead of all cases being blocking on some channel, see if it is poosible
+//TODO: I suspect there can be more in select instead of all cases being blocking on some channel, see if it is possible
 //to write case other than being blocking on some channel
 e.g.
 select{
@@ -42,9 +42,10 @@ func Select_uses() {
 	ch2 = make(chan int)
 
 	//invoke a new goroutine
-	go func(ch chan int) {
+	go func() {
+		//closure capture ch
 		ch <- 2
-	}(ch)
+	}()
 
 	//select block
 	select {
@@ -56,7 +57,7 @@ func Select_uses() {
 		// default:
 	}
 
-	//TODO: what will happen if we write new goroutine here instead of above select{} block
+	//TODO: what will happen if we write new goroutine here instead of above select{} block - will execution reach here
 	// go func(ch chan int) {
 	// 	ch <- 2
 	// }(ch)

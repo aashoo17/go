@@ -9,19 +9,18 @@ aliases
 rune - int32
 byte - int8
 
-TODO: operator precedence is simple with 5 level of precedence and left associativity how that is achieved
+todo: operator precedence is simple with 5 level of precedence and left associativity how that is achieved
 can work on spare time
 
 boolean, numbers and strings can be compared using ==, !=, <, >, <=, >=
-TODO: how string comparison works when string is utf-8 based
+todo: how string comparison works when string is utf-8 based
 
 explicit conversion - go does not do any implicit conversion as it is common source of bugs in c
 
-TODO: how to use uintptr
-TODO: what is the size of int in go
+todo: how to use uintptr for pointer types
 
-default values - go gives deffault values to all primitive types
-bool, string, int = false, "", 0
+default values - go gives default values to all primitive types
+bool, string, int as false, "", 0 respectively
 
 type conversions - int(a)..
 constants
@@ -42,9 +41,8 @@ here x = 0, y = 1, z = 2
 */
 const (
 	//iota is just zero
-	//TODO: can we use another type inside const like string
 	x int = iota
-	y     //implicit replace iota in expression with iota + 1
+	y     //implicit - replace iota in expression with iota + 1
 	z
 )
 
@@ -63,6 +61,7 @@ func Integers() {
 	var g uint32 = 10
 	var h uint64 = 10
 
+	//todo: how to create uintptr from pointer types
 	var i uintptr = 10
 
 	fmt.Println(a, b, c, d, e, f, g, h, i)
@@ -101,12 +100,13 @@ func ZeroValues() {
 	//we are not giving any value to these but go gives
 	//a = 0, b = false, c = ""
 	fmt.Println(a, b, c)
+	//so even the struct will be built on top of these types so they get these default values for fields
 }
 
 /*
 all type conversions in go are explicit
 it is error to pass one type another type without explicit conversion
-assignemnt and in function arguments
+assignment and in function arguments
 */
 func TypeConversion() {
 	var a int = 10
