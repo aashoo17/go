@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/lang/concurrency"
+	"github.com/lang/networking"
 )
 
 func main() {
-	concurrency.Select_uses()
+	networking.HttpClient()
 }
