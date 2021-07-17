@@ -2,6 +2,9 @@ package pkg
 
 import (
 	"fmt"
+	"os"
+	"os/signal"
+	"syscall"
 	"time"
 )
 
@@ -49,12 +52,18 @@ func Alarm() {
 //continuous alarm - called as Ticker in go
 func ContinuousAlarm() {
 	//TODO: add CTRL + C signal handling to stop the time from command line
+	sigs := make(chan os.Signal, 1)
+	signal.Notify(sigs, syscall.SIGINT)
+
 	//create a ticker which will give time after every 1s duration
 	b := time.NewTicker(time.Second)
-
-	for c := range b.C {
-		fmt.Println(c)
-	}
+	go func() {
+		for c := range b.C {
+			fmt.Println(c)
+		}
+	}()
+	//wait for signal - once received main thread will exit and cleanup all goroutines
+	<-sigs
 }
 
 //Sleep for some time

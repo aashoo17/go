@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/lang/networking"
+	"github.com/lang/pkg"
 )
 
 func main() {
-	networking.HttpClient()
+	pkg.ContinuousAlarm()
 }

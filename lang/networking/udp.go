@@ -32,5 +32,4 @@ func handleUdpConn(cl net.Conn, buf []uint8, ch chan bool) {
 		cl.Write([]byte("Hello from UDP client\n"))
 		fmt.Println(string(buf))
 	}
-	ch <- true
 }

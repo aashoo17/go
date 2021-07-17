@@ -11,6 +11,10 @@ func (h Human) GiveName() {
 	fmt.Println(h.name)
 }
 
+func(h Human) GiveAge(){
+	fmt.Println(h.age)
+}
+
 func main() {
 	a := Human{}
 	a.GiveName()
