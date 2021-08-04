@@ -7,7 +7,7 @@ import (
 
 func TcpClient() {
 	cl, _ := net.Dial("tcp", "127.0.0.1:3000")
-	buf := make([]uint8, 100)
+	buf := make([]byte, 100)
 	for {
 		cl.Write([]byte("Hello from TCP client\n"))
 		cl.Read(buf)
@@ -17,19 +17,17 @@ func TcpClient() {
 
 func TcpServer() {
 	server, _ := net.Listen("tcp", "127.0.0.1:3000")
-	buf := make([]uint8, 100)
+	buf := make([]byte, 100)
 	for {
-		cl, _ := server.Accept() //todo: is Accept() blocking
+		cl, _ := server.Accept() //todo: is Accept() blocking the main thread internally
 		//handle each connection in their own goroutine
-		go handleConn(cl, buf)
+		go func() {
+			for {
+				cl.Write([]byte("Hello from TCP server\n"))
+				cl.Read(buf)
+				fmt.Println(string(buf))
+			}
+		}()
 	}
 	//TODO: how the main thread is getting blocked
-}
-
-func handleConn(cl net.Conn, buf []uint8) {
-	for {
-		cl.Write([]byte("Hello from TCP client\n"))
-		cl.Read(buf)
-		fmt.Println(string(buf))
-	}
 }

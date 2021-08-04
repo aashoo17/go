@@ -1,9 +1,7 @@
 package main
 
-import (
-	"github.com/lang/pkg"
-)
+import "github.com/lang/networking"
 
 func main() {
-	pkg.ContinuousAlarm()
+	networking.Get()
 }

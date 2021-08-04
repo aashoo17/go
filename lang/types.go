@@ -28,7 +28,9 @@ constants
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 //creating const
 const v = 10
@@ -44,6 +46,14 @@ const (
 	x int = iota
 	y     //implicit - replace iota in expression with iota + 1
 	z
+)
+
+//can multi const become any type apart from int
+//so const works like any memory which can not be changed
+const (
+	a = ""
+	b = "Hello"
+	c = "World"
 )
 
 /*
@@ -63,6 +73,7 @@ func Integers() {
 
 	//todo: how to create uintptr from pointer types
 	var i uintptr = 10
+	// var j uintptr = unsafe.Pointer(&i)
 
 	fmt.Println(a, b, c, d, e, f, g, h, i)
 }

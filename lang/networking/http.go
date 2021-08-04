@@ -1,15 +1,18 @@
 package networking
 
 import (
+	"bufio"
 	"io"
 	"net/http"
 	"os"
 )
 
-func HttpClient() {
-	resp, _ := http.Get("https://jsonplaceholder.typicode.com/photos")
-	f, _ := os.Create("file.txt")
+func Get() {
+	resp, _ := http.Get("https://jsonplaceholder.typicode.com/posts")
 	sl, _ := io.ReadAll(resp.Body)
-	f.Write(sl)
+
+	f, _ := os.Create("file.json")
+	writer := bufio.NewWriter(f)
 	defer f.Close()
+	writer.Write(sl)
 }
