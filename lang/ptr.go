@@ -2,16 +2,6 @@ package main
 
 import "fmt"
 
-/*
-Pointer: create, initialize, deref
-pointer to structs
-pointer receivers in struct
-auto deref of pointerwith .
-nil pointer
-pointer indirection when using methods
-*/
-
-//create, initialize, deref ptr
 func Ptr() {
 	var a int = 10
 	//create & initialize ptr
@@ -23,7 +13,7 @@ func Ptr() {
 	var c *int
 	c = &a
 
-	//deref
+	// deref
 	*c = 50
 
 	//nil pointer - pointer doesn't point to anywhere valid in cpu

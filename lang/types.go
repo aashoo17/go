@@ -9,20 +9,19 @@ aliases
 rune - int32
 byte - int8
 
-todo: operator precedence is simple with 5 level of precedence and left associativity how that is achieved
+TODO: operator precedence is simple with 5 level of precedence and left associativity how that is achieved
 can work on spare time
 
 boolean, numbers and strings can be compared using ==, !=, <, >, <=, >=
-todo: how string comparison works when string is utf-8 based
+TODO: how string comparison works when string is utf-8 based
 
 explicit conversion - go does not do any implicit conversion as it is common source of bugs in c
-
-todo: how to use uintptr for pointer types
+TODO: how to use uintptr for pointer types
 
 default values - go gives default values to all primitive types
 bool, string, int as false, "", 0 respectively
 
-type conversions - int(a)..
+type conversions - int(a)
 constants
 */
 
@@ -48,7 +47,7 @@ const (
 	z
 )
 
-//can multi const become any type apart from int
+//TODO: can multi const become any type apart from int
 //so const works like any memory which can not be changed
 const (
 	a = ""
@@ -58,7 +57,7 @@ const (
 
 /*
 numbers:
-integers - int8, int16, int32, int64, uint8, uint16,
+integers - int8, int16, int32, int64, uint8, uint16, uint32, uint64, int, uint, uintptr
 */
 func Integers() {
 	var a int8 = 10
@@ -72,10 +71,17 @@ func Integers() {
 	var h uint64 = 10
 
 	//todo: how to create uintptr from pointer types
+	/*
+	since ptr type does not allow arithmetic operations if in a scenario we need to do so
+	we convert pointer into interger type and do all that arithmetic calculations 
+	since pointers are processor dependent - uintptr is also processor dependent and can be 4 or 8 bytes
+	*/
 	var i uintptr = 10
 	// var j uintptr = unsafe.Pointer(&i)
+	var k int = 10
+	var m uint = 10
 
-	fmt.Println(a, b, c, d, e, f, g, h, i)
+	fmt.Println(a, b, c, d, e, f, g, h, i, k, m)
 }
 
 func Floats() {
@@ -94,7 +100,8 @@ func Bools() {
 func Chars() {
 	//unicode chars so rune (alias for int32) is used - no char type in go
 	var a rune = 'A'
-	fmt.Println(a)
+	var b rune = '\u0939'	//unicode chars
+	fmt.Println(a,b)
 }
 
 /*

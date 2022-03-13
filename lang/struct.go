@@ -8,6 +8,11 @@ type MyStruct struct {
 	age  int
 }
 
+func StructMemoryAllocation(){
+	var a MyStruct	//could be stack or heap - compiler decides
+	fmt.Println(a)
+}
+
 func InitializeStruct() {
 	//struct initialization using struct literal
 	var a MyStruct = MyStruct{
