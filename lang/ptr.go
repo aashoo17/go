@@ -10,13 +10,13 @@ func Ptr() {
 	*b = 20
 
 	//create and then initialize
-	var c *int
+	var c *int	//TODO: is pointer assigned nil default value here
 	c = &a
 
 	// deref
 	*c = 50
 
-	//nil pointer - pointer doesn't point to anywhere valid in cpu
+	//nil pointer - pointer doesn't point to any valid memory in cpu, this is used as marker for no memory location
 	var d *int = nil
 
 	fmt.Println(b, c, d)

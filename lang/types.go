@@ -4,7 +4,7 @@ integer:
 go has opted for fixed type integers - 1, 2, 4, 8 bytes long
 signed int types - int8, int16, int32, int64
 unsigned int types - uint8, uint16, uint32, uint64
-int, uint, uintptr - platform dependent on 32 bit 4 byte and on 64 bit 8 byte
+int, uint, uintptr - platform dependent, on 32 bit 4 byte and on 64 bit 8 byte
 aliases
 rune - int32
 byte - int8
